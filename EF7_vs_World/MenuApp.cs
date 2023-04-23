@@ -5,12 +5,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using EF7_vs_World.ModelsEF7;
+using System.Threading.Channels;
 
 namespace EF7_vs_World
 {
     class MenuApp
     {
+        const int SCN1 = 10000000;
         ExecuteEF7 objExecuteEF7 = new ExecuteEF7();
+        ExecuteLinqToDB objExecuteLinqToDB = new ExecuteLinqToDB();
+        ExecuteLinqToSQL objExecuteLinqToSQL = new ExecuteLinqToSQL();
         public async Task<bool> MainMenu()
         {
             Console.WriteLine($"**********************************************");
@@ -29,8 +33,11 @@ namespace EF7_vs_World
                 case 0:
                     Console.WriteLine($"You have finished the App.!!");
                     return false;
-                case 1:                    
-                    await objExecuteEF7.ExecuteEF7Query(100);
+                case 1:
+                    objExecuteLinqToDB.ExecuteLinq2DB(SCN1);
+                    objExecuteLinqToSQL.ExecuteLinq2SQL(SCN1);
+                    await objExecuteEF7.ExecuteEF7Query(SCN1);
+                    
                     return true;
                 default:
                     Console.WriteLine("");

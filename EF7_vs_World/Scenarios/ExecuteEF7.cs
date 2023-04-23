@@ -31,7 +31,7 @@ namespace EF7_vs_World.Scenarios
                         .Take(totalRows)
                         .ToListAsync();
                     timeMeasure.Stop();
-                    Console.WriteLine($"Total Time For {totalRows} Rows in Entity Framework 7: {timeMeasure.Elapsed.TotalMilliseconds.ToString("#,##0.00")} ms");
+                    Console.WriteLine($"Total Time For {totalRows} Rows in Entity Framework7 : {timeMeasure.Elapsed.TotalMilliseconds} ms");
                 }
             }
             catch (Exception ex)
