@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Diagnostics;
 using EF7_vs_World.ModelsEF7;
 using Microsoft.EntityFrameworkCore;
+using System.Globalization;
 
 namespace EF7_vs_World.Scenarios
 {
@@ -31,12 +32,12 @@ namespace EF7_vs_World.Scenarios
                         .Take(totalRows)
                         .ToListAsync();
                     timeMeasure.Stop();
-                    Console.WriteLine($"Total Time For {totalRows} Rows in Entity Framework7 : {timeMeasure.Elapsed.TotalMilliseconds} ms");
+                    Console.WriteLine($"Total Time For {totalRows.ToString("#,#", CultureInfo.InvariantCulture)} Rows in Entity Framework7 : {timeMeasure.Elapsed.TotalMilliseconds.ToString("#,##0.00", CultureInfo.InvariantCulture)} ms");
                 }
             }
             catch (Exception ex)
             {
-                await Console.Out.WriteLineAsync($"An error has occurred executing Query for Entity Framework 7: {ex.Message}"); ;
+                await Console.Out.WriteLineAsync($"An error has occurred executing Query with Entity Framework 7: {ex.Message}"); ;
             }
         }
     }

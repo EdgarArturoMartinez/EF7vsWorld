@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Diagnostics;
 using EF7_vs_World.ModelsEF7;
 using Microsoft.EntityFrameworkCore;
+using System.Globalization;
 
 namespace EF7_vs_World.Scenarios
 {
@@ -31,12 +32,12 @@ namespace EF7_vs_World.Scenarios
                             .Take(totalRows)
                             .ToList();
                     timeMeasure.Stop();
-                    Console.WriteLine($"Total Time For {totalRows} Rows in Linq2SQL : {timeMeasure.Elapsed.TotalMilliseconds} ms");
+                    Console.WriteLine($"Total Time For {totalRows.ToString("#,#", CultureInfo.InvariantCulture)} Rows in Linq2SQL : {timeMeasure.Elapsed.TotalMilliseconds.ToString("#,##0.00", CultureInfo.InvariantCulture)} ms");
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"An error has occurred executing Query for Linq2SQL: {ex.Message}");
+                Console.WriteLine($"An error has occurred executing Query with Linq2SQL: {ex.Message}");
             }
             
         }
