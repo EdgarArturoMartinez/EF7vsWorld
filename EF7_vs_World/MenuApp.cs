@@ -24,6 +24,7 @@ namespace EF7_vs_World
         ExecuteLinqToDB objExecuteLinqToDB = new ExecuteLinqToDB();
         ExecuteLinqToSQL objExecuteLinqToSQL = new ExecuteLinqToSQL();
         ExecuteADODataAdapter objExecuteADODataAdapter = new ExecuteADODataAdapter();
+        ExecuteADODataReader objExecuteADODataReader = new ExecuteADODataReader();
         #endregion
         public async Task<bool> MainMenu()
         {
@@ -44,37 +45,42 @@ namespace EF7_vs_World
                     Console.WriteLine($"You have finished the App.!!");
                     return false;
                 case 1:
-                    objExecuteLinqToDB.ExecuteLinq2DB(SCN1);
-                    objExecuteLinqToSQL.ExecuteLinq2SQL(SCN1);
                     objExecuteADODataAdapter.ExecuteADODataAdapters(SCN1);
+                    objExecuteADODataReader.ExecuteADODataReaderWithMappings(SCN1);
+                    objExecuteLinqToDB.ExecuteLinq2DB(SCN1);
+                    objExecuteLinqToSQL.ExecuteLinq2SQL(SCN1);                    
                     await objExecuteEF7.ExecuteEF7Query(SCN1);
                     
                     return true;
                 case 2:
-                    objExecuteLinqToDB.ExecuteLinq2DB(SCN2);
-                    objExecuteLinqToSQL.ExecuteLinq2SQL(SCN2);
                     objExecuteADODataAdapter.ExecuteADODataAdapters(SCN2);
+                    objExecuteADODataReader.ExecuteADODataReaderWithMappings(SCN2);
+                    objExecuteLinqToDB.ExecuteLinq2DB(SCN2);
+                    objExecuteLinqToSQL.ExecuteLinq2SQL(SCN2);                    
                     await objExecuteEF7.ExecuteEF7Query(SCN2);
 
                     return true;
                 case 3:
-                    objExecuteLinqToDB.ExecuteLinq2DB(SCN3);
-                    objExecuteLinqToSQL.ExecuteLinq2SQL(SCN3);
                     objExecuteADODataAdapter.ExecuteADODataAdapters(SCN3);
+                    objExecuteADODataReader.ExecuteADODataReaderWithMappings(SCN3);
+                    objExecuteLinqToDB.ExecuteLinq2DB(SCN3);
+                    objExecuteLinqToSQL.ExecuteLinq2SQL(SCN3);                    
                     await objExecuteEF7.ExecuteEF7Query(SCN3);
 
                     return true;
                 case 4:
-                    objExecuteLinqToDB.ExecuteLinq2DB(SCN4);
-                    objExecuteLinqToSQL.ExecuteLinq2SQL(SCN4);
                     objExecuteADODataAdapter.ExecuteADODataAdapters(SCN4);
+                    objExecuteADODataReader.ExecuteADODataReaderWithMappings(SCN4);
+                    objExecuteLinqToDB.ExecuteLinq2DB(SCN4);
+                    objExecuteLinqToSQL.ExecuteLinq2SQL(SCN4);                    
                     await objExecuteEF7.ExecuteEF7Query(SCN4);
 
                     return true;
                 case 5:
-                    objExecuteLinqToDB.ExecuteLinq2DB(SCN5);
-                    objExecuteLinqToSQL.ExecuteLinq2SQL(SCN5);
                     objExecuteADODataAdapter.ExecuteADODataAdapters(SCN5);
+                    objExecuteADODataReader.ExecuteADODataReaderWithMappings(SCN5);
+                    objExecuteLinqToDB.ExecuteLinq2DB(SCN5);
+                    objExecuteLinqToSQL.ExecuteLinq2SQL(SCN5);                    
                     await objExecuteEF7.ExecuteEF7Query(SCN5);
 
                     return true;

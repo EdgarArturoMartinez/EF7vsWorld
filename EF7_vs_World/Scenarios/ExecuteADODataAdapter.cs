@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 using System.Diagnostics;
-using EF7_vs_World.ModelsEF7;
 using EF7_vs_World.HandlerADO;
 using Microsoft.Data.SqlClient;
 using System.Globalization;
 
-namespace EF7_vs_World
+namespace EF7_vs_World.Scenarios
 {
     class ExecuteADODataAdapter : DataBaseHandler
     {
@@ -21,7 +16,7 @@ namespace EF7_vs_World
                 try
                 {
                     timeMeasure.Start();
-                    sqlConnection.Open();                    
+                    sqlConnection.Open();
 
                     string query = $"SELECT Top({totalRows}) " +
                         "p.Name, p.ProductNumber, th.*, tha.* " +
