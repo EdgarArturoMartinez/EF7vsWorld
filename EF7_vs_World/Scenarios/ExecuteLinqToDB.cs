@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using EF7_vs_World.ModelsEF7;
-using Microsoft.EntityFrameworkCore;
 using System.Globalization;
 
 namespace EF7_vs_World.Scenarios
@@ -27,8 +21,8 @@ namespace EF7_vs_World.Scenarios
                                 {
                                     p.Name,
                                     p.ProductNumber,
-                                    th.ProductId,
-                                    tha.Quantity
+                                    th,
+                                    tha
                                 };
                     var result = query.Take(totalRows).ToList();
                     timeMeasure.Stop();

@@ -28,16 +28,16 @@ namespace EF7_vs_World.Scenarios
                         .Join(context.TransactionHistoryArchives,
                             joined => joined.TransactionHistories.Quantity,
                             tha => tha.Quantity,
-                            (joined, tha) => new { joined.TransactionHistories, joined.Products, TransactionHistoryArchive = tha })
+                            (joined, tha) => new { joined.Products.Name, joined.Products.ProductNumber, joined.TransactionHistories,  TransactionHistoryArchive = tha })
                         .Take(totalRows)
                         .ToListAsync();
                     timeMeasure.Stop();
-                    Console.WriteLine($"Total Time For {totalRows.ToString("#,#", CultureInfo.InvariantCulture)} Rows in Entity Framework7 : {timeMeasure.Elapsed.TotalMilliseconds.ToString("#,##0.00", CultureInfo.InvariantCulture)} ms");
+                    Console.WriteLine($"Total Time For {totalRows.ToString("#,#", CultureInfo.InvariantCulture)} Rows in Entity Framework7 Without Extra Settings : {timeMeasure.Elapsed.TotalMilliseconds.ToString("#,##0.00", CultureInfo.InvariantCulture)} ms");
                 }
             }
             catch (Exception ex)
             {
-                await Console.Out.WriteLineAsync($"An error has occurred executing Query with Entity Framework 7: {ex.Message}"); ;
+                await Console.Out.WriteLineAsync($"An error has occurred executing Query with Entity Framework 7 Without Extra Settings: {ex.Message}"); ;
             }
         }
     }

@@ -1,5 +1,4 @@
-﻿
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using EF7_vs_World.HandlerADO;
 using Microsoft.Data.SqlClient;
 using System.Globalization;

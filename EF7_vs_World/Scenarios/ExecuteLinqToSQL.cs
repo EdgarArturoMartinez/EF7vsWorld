@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using EF7_vs_World.ModelsEF7;
-using Microsoft.EntityFrameworkCore;
 using System.Globalization;
 
 namespace EF7_vs_World.Scenarios
@@ -28,7 +22,7 @@ namespace EF7_vs_World.Scenarios
                             .Join(context.TransactionHistoryArchives,
                                 joined => joined.TransactionHistories.Quantity,
                                 tha => tha.Quantity,
-                                (joined, tha) => new { joined.TransactionHistories, joined.Products, TransactionHistoryArchive = tha })
+                                (joined, tha) => new { joined.Products.Name, joined.Products.ProductNumber, joined.TransactionHistories,  TransactionHistoryArchive = tha })
                             .Take(totalRows)
                             .ToList();
                     timeMeasure.Stop();

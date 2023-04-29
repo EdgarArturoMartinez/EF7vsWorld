@@ -25,6 +25,7 @@ namespace EF7_vs_World
         ExecuteLinqToSQL objExecuteLinqToSQL = new ExecuteLinqToSQL();
         ExecuteADODataAdapter objExecuteADODataAdapter = new ExecuteADODataAdapter();
         ExecuteADODataReader objExecuteADODataReader = new ExecuteADODataReader();
+        ExecuteEF7AsNoTracking objExecuteEF7AsNoTracking = new ExecuteEF7AsNoTracking();
         #endregion
         public async Task<bool> MainMenu()
         {
@@ -48,9 +49,11 @@ namespace EF7_vs_World
                     objExecuteADODataAdapter.ExecuteADODataAdapters(SCN1);
                     objExecuteADODataReader.ExecuteADODataReaderWithMappings(SCN1);
                     objExecuteLinqToDB.ExecuteLinq2DB(SCN1);
-                    objExecuteLinqToSQL.ExecuteLinq2SQL(SCN1);                    
+                    objExecuteLinqToSQL.ExecuteLinq2SQL(SCN1);
+                    await objExecuteEF7AsNoTracking.ExecuteEF7WithAsNoTracking(SCN1);
                     await objExecuteEF7.ExecuteEF7Query(SCN1);
-                    
+
+
                     return true;
                 case 2:
                     objExecuteADODataAdapter.ExecuteADODataAdapters(SCN2);
