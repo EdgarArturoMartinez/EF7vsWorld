@@ -46,6 +46,7 @@ namespace EF7_vs_World
                     Console.WriteLine($"You have finished the App.!!");
                     return false;
                 case 1:
+                    Console.WriteLine($"\r\nYou have selected 500K Scenario : ");
                     objExecuteADODataAdapter.ExecuteADODataAdapters(SCN1);
                     objExecuteADODataReader.ExecuteADODataReaderWithMappings(SCN1);
                     objExecuteLinqToDB.ExecuteLinq2DB(SCN1);
@@ -55,6 +56,7 @@ namespace EF7_vs_World
 
                     return true;
                 case 2:
+                    Console.WriteLine($"\r\nYou have selected 1M Rows Scenario : ");
                     objExecuteADODataAdapter.ExecuteADODataAdapters(SCN2);
                     objExecuteADODataReader.ExecuteADODataReaderWithMappings(SCN2);
                     objExecuteLinqToDB.ExecuteLinq2DB(SCN2);
@@ -64,6 +66,7 @@ namespace EF7_vs_World
 
                     return true;
                 case 3:
+                    Console.WriteLine($"\r\nYou have selected 5M Rows Scenario : ");
                     objExecuteADODataAdapter.ExecuteADODataAdapters(SCN3);
                     objExecuteADODataReader.ExecuteADODataReaderWithMappings(SCN3);
                     objExecuteLinqToDB.ExecuteLinq2DB(SCN3);
@@ -73,6 +76,7 @@ namespace EF7_vs_World
 
                     return true;
                 case 4:
+                    Console.WriteLine($"\r\nYou have selected 10M Rows Scenario : ");
                     objExecuteADODataAdapter.ExecuteADODataAdapters(SCN4);
                     objExecuteADODataReader.ExecuteADODataReaderWithMappings(SCN4);
                     objExecuteLinqToDB.ExecuteLinq2DB(SCN4);
@@ -82,6 +86,7 @@ namespace EF7_vs_World
 
                     return true;
                 case 5:
+                    Console.WriteLine($"\r\nYou have selected 50M Rows Scenario : ");
                     objExecuteADODataAdapter.ExecuteADODataAdapters(SCN5);
                     objExecuteADODataReader.ExecuteADODataReaderWithMappings(SCN5);
                     objExecuteLinqToDB.ExecuteLinq2DB(SCN5);
