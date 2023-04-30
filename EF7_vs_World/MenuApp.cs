@@ -26,6 +26,7 @@ namespace EF7_vs_World
         ExecuteADODataAdapter objExecuteADODataAdapter = new ExecuteADODataAdapter();
         ExecuteADODataReader objExecuteADODataReader = new ExecuteADODataReader();
         ExecuteEF7AsNoTracking objExecuteEF7AsNoTracking = new ExecuteEF7AsNoTracking();
+        ExecuteDapper objExecuteDapper = new ExecuteDapper();
         #endregion
         public async Task<bool> MainMenu()
         {
@@ -51,6 +52,7 @@ namespace EF7_vs_World
                     objExecuteADODataReader.ExecuteADODataReaderWithMappings(SCN1);
                     objExecuteLinqToDB.ExecuteLinq2DB(SCN1);
                     objExecuteLinqToSQL.ExecuteLinq2SQL(SCN1);
+                    objExecuteDapper.ExecuteDapperMicroORM500K();
                     await objExecuteEF7AsNoTracking.ExecuteEF7WithAsNoTracking(SCN1);
                     await objExecuteEF7.ExecuteEF7Query(SCN1);
 
@@ -61,6 +63,7 @@ namespace EF7_vs_World
                     objExecuteADODataReader.ExecuteADODataReaderWithMappings(SCN2);
                     objExecuteLinqToDB.ExecuteLinq2DB(SCN2);
                     objExecuteLinqToSQL.ExecuteLinq2SQL(SCN2);
+                    objExecuteDapper.ExecuteDapperMicroORM1M();
                     await objExecuteEF7AsNoTracking.ExecuteEF7WithAsNoTracking(SCN2);
                     await objExecuteEF7.ExecuteEF7Query(SCN2);
 
@@ -71,6 +74,7 @@ namespace EF7_vs_World
                     objExecuteADODataReader.ExecuteADODataReaderWithMappings(SCN3);
                     objExecuteLinqToDB.ExecuteLinq2DB(SCN3);
                     objExecuteLinqToSQL.ExecuteLinq2SQL(SCN3);
+                    objExecuteDapper.ExecuteDapperMicroORM5M();
                     await objExecuteEF7AsNoTracking.ExecuteEF7WithAsNoTracking(SCN3);
                     await objExecuteEF7.ExecuteEF7Query(SCN3);
 
@@ -81,6 +85,7 @@ namespace EF7_vs_World
                     objExecuteADODataReader.ExecuteADODataReaderWithMappings(SCN4);
                     objExecuteLinqToDB.ExecuteLinq2DB(SCN4);
                     objExecuteLinqToSQL.ExecuteLinq2SQL(SCN4);
+                    objExecuteDapper.ExecuteDapperMicroORM10M();
                     await objExecuteEF7AsNoTracking.ExecuteEF7WithAsNoTracking(SCN4);
                     await objExecuteEF7.ExecuteEF7Query(SCN4);
 
@@ -91,6 +96,7 @@ namespace EF7_vs_World
                     objExecuteADODataReader.ExecuteADODataReaderWithMappings(SCN5);
                     objExecuteLinqToDB.ExecuteLinq2DB(SCN5);
                     objExecuteLinqToSQL.ExecuteLinq2SQL(SCN5);
+                    objExecuteDapper.ExecuteDapperMicroORM50M();
                     await objExecuteEF7AsNoTracking.ExecuteEF7WithAsNoTracking(SCN5);
                     await objExecuteEF7.ExecuteEF7Query(SCN5);
 
@@ -100,7 +106,7 @@ namespace EF7_vs_World
                     Console.WriteLine("");
                     Console.WriteLine($"You have choosen a wrong option.!!");
                     return true;
-            }
+            }            
         }
     }
 }
