@@ -33,6 +33,8 @@ namespace EF7_vs_World.Scenarios
                         .ToListAsync();
                     timeMeasure.Stop();
                     Console.WriteLine($"Total Time For {totalRows.ToString("#,#", CultureInfo.InvariantCulture)} Rows in Entity Framework7 Without Extra Settings : {timeMeasure.Elapsed.TotalMilliseconds.ToString("#,##0.00", CultureInfo.InvariantCulture)} ms");
+                    ExecuteCreatedBenchmarkLog objexecuteCreatedBenchmarkLog = new ExecuteCreatedBenchmarkLog();
+                    objexecuteCreatedBenchmarkLog.InsertBenchmark(totalRows.ToString("#,#", CultureInfo.InvariantCulture), "Entity Framework7 Without Extra Settings", timeMeasure.Elapsed.TotalMilliseconds);
                 }
             }
             catch (Exception ex)

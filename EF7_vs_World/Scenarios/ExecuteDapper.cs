@@ -32,6 +32,8 @@ namespace EF7_vs_World.Scenarios
                     var results = sqlConnection.Query(sql).ToList();
                     timeMeasure.Stop();
                     Console.WriteLine($"Total Time For {500000.ToString("#,#", CultureInfo.InvariantCulture)} Rows in Dapper Micro-ORM : {timeMeasure.Elapsed.TotalMilliseconds.ToString("#,##0.00", CultureInfo.InvariantCulture)} ms");
+                    ExecuteCreatedBenchmarkLog objexecuteCreatedBenchmarkLog = new ExecuteCreatedBenchmarkLog();
+                    objexecuteCreatedBenchmarkLog.InsertBenchmark(500000.ToString("#,#", CultureInfo.InvariantCulture), "Dapper Micro-ORM", timeMeasure.Elapsed.TotalMilliseconds);
 
                     return results;
                 }
@@ -69,6 +71,8 @@ namespace EF7_vs_World.Scenarios
                     var results = sqlConnection.Query(sql).ToList();
                     timeMeasure.Stop();
                     Console.WriteLine($"Total Time For {1000000.ToString("#,#", CultureInfo.InvariantCulture)} Rows in Dapper Micro-ORM : {timeMeasure.Elapsed.TotalMilliseconds.ToString("#,##0.00", CultureInfo.InvariantCulture)} ms");
+                    ExecuteCreatedBenchmarkLog objexecuteCreatedBenchmarkLog = new ExecuteCreatedBenchmarkLog();
+                    objexecuteCreatedBenchmarkLog.InsertBenchmark(1000000.ToString("#,#", CultureInfo.InvariantCulture), "Dapper Micro-ORM", timeMeasure.Elapsed.TotalMilliseconds);
 
                     return results;
                 }
@@ -106,6 +110,8 @@ namespace EF7_vs_World.Scenarios
                     var results = sqlConnection.Query(sql).ToList();
                     timeMeasure.Stop();
                     Console.WriteLine($"Total Time For {5000000.ToString("#,#", CultureInfo.InvariantCulture)} Rows in Dapper Micro-ORM : {timeMeasure.Elapsed.TotalMilliseconds.ToString("#,##0.00", CultureInfo.InvariantCulture)} ms");
+                    ExecuteCreatedBenchmarkLog objexecuteCreatedBenchmarkLog = new ExecuteCreatedBenchmarkLog();
+                    objexecuteCreatedBenchmarkLog.InsertBenchmark(5000000.ToString("#,#", CultureInfo.InvariantCulture), "Dapper Micro-ORM", timeMeasure.Elapsed.TotalMilliseconds);
 
                     return results;
                 }
@@ -143,6 +149,8 @@ namespace EF7_vs_World.Scenarios
                     var results = sqlConnection.Query(sql).ToList();
                     timeMeasure.Stop();
                     Console.WriteLine($"Total Time For {10000000.ToString("#,#", CultureInfo.InvariantCulture)} Rows in Dapper Micro-ORM : {timeMeasure.Elapsed.TotalMilliseconds.ToString("#,##0.00", CultureInfo.InvariantCulture)} ms");
+                    ExecuteCreatedBenchmarkLog objexecuteCreatedBenchmarkLog = new ExecuteCreatedBenchmarkLog();
+                    objexecuteCreatedBenchmarkLog.InsertBenchmark(10000000.ToString("#,#", CultureInfo.InvariantCulture), "Dapper Micro-ORM", timeMeasure.Elapsed.TotalMilliseconds);
 
                     return results;
                 }
@@ -180,6 +188,8 @@ namespace EF7_vs_World.Scenarios
                     var results = sqlConnection.Query(sql).ToList();
                     timeMeasure.Stop();
                     Console.WriteLine($"Total Time For {50000000.ToString("#,#", CultureInfo.InvariantCulture)} Rows in Dapper Micro-ORM : {timeMeasure.Elapsed.TotalMilliseconds.ToString("#,##0.00", CultureInfo.InvariantCulture)} ms");
+                    ExecuteCreatedBenchmarkLog objexecuteCreatedBenchmarkLog = new ExecuteCreatedBenchmarkLog();
+                    objexecuteCreatedBenchmarkLog.InsertBenchmark(50000000.ToString("#,#", CultureInfo.InvariantCulture), "Dapper Micro-ORM", timeMeasure.Elapsed.TotalMilliseconds);
 
                     return results;
                 }

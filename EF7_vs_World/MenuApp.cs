@@ -33,7 +33,7 @@ namespace EF7_vs_World
             Console.WriteLine($"**********************************************");
             Console.WriteLine($"   Welcome to Entity Framework vs World App   ");
             Console.WriteLine($"----------------------------------------------\n");
-            Console.WriteLine($"\r\nBenchmarking report in Miliseconds for : ");
+            Console.WriteLine($"\r\nBenchmark report in Miliseconds for : ");
             Console.WriteLine($"1.  500K Rows");
             Console.WriteLine($"2.  1M   Rows");
             Console.WriteLine($"3.  5M   Rows");

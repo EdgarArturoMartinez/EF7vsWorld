@@ -27,6 +27,8 @@ namespace EF7_vs_World.Scenarios
                             .ToList();
                     timeMeasure.Stop();
                     Console.WriteLine($"Total Time For {totalRows.ToString("#,#", CultureInfo.InvariantCulture)} Rows in Linq2SQL : {timeMeasure.Elapsed.TotalMilliseconds.ToString("#,##0.00", CultureInfo.InvariantCulture)} ms");
+                    ExecuteCreatedBenchmarkLog objexecuteCreatedBenchmarkLog = new ExecuteCreatedBenchmarkLog();
+                    objexecuteCreatedBenchmarkLog.InsertBenchmark(totalRows.ToString("#,#", CultureInfo.InvariantCulture), "Linq2SQL", timeMeasure.Elapsed.TotalMilliseconds);
                 }
             }
             catch (Exception ex)

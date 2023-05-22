@@ -50,6 +50,8 @@ namespace EF7_vs_World.Scenarios
 
                     timeMeasure.Stop();
                     Console.WriteLine($"Total Time For {totalRows.ToString("#,#", CultureInfo.InvariantCulture)} Rows in ADO.Net With Data Reader and Manual Mappings : {timeMeasure.Elapsed.TotalMilliseconds.ToString("#,##0.00", CultureInfo.InvariantCulture)} ms");
+                    ExecuteCreatedBenchmarkLog objexecuteCreatedBenchmarkLog = new ExecuteCreatedBenchmarkLog();
+                    objexecuteCreatedBenchmarkLog.InsertBenchmark(totalRows.ToString("#,#", CultureInfo.InvariantCulture), "ADO.Net With Data Reader and Manual Mappings", timeMeasure.Elapsed.TotalMilliseconds);
 
                 }
                 catch (Exception ex)
