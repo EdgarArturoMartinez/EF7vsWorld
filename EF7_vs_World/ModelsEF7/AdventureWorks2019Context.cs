@@ -13,6 +13,7 @@ public partial class AdventureWorks2019Context : DbContext
     public AdventureWorks2019Context(DbContextOptions<AdventureWorks2019Context> options)
         : base(options)
     {
+        Database.SetCommandTimeout(9000);
     }
 
     public virtual DbSet<Address> Addresses { get; set; }

@@ -28,7 +28,7 @@ namespace EF7_vs_World.Scenarios
                     FROM Production.TransactionHistory th
                     INNER JOIN Production.Product p ON (P.ProductID = th.ProductID)
                     INNER JOIN Production.TransactionHistoryArchive tha ON (th.Quantity = tha.Quantity)";
-
+                    
                     var results = sqlConnection.Query(sql).ToList();
                     timeMeasure.Stop();
                     Console.WriteLine($"Total Time For {500000.ToString("#,#", CultureInfo.InvariantCulture)} Rows in Dapper Micro-ORM : {timeMeasure.Elapsed.TotalMilliseconds.ToString("#,##0.00", CultureInfo.InvariantCulture)} ms");
