@@ -25,9 +25,13 @@ namespace EF7_vs_World.Scenarios
 
                     SqlDataAdapter dataAdapter = new SqlDataAdapter(query, sqlConnection);
                     System.Data.DataSet dataSet = new System.Data.DataSet();
+                    dataAdapter.Fill(dataSet);
 
                     timeMeasure.Stop();
-                    Console.WriteLine($"Total Time For {totalRows.ToString("#,#", CultureInfo.InvariantCulture)} Rows in ADO.Net With Data Adapter : {timeMeasure.Elapsed.TotalMilliseconds.ToString("#,##0.00", CultureInfo.InvariantCulture)} ms");
+                    Console.WriteLine($"Total Time For {totalRows.ToString("#,#", CultureInfo.InvariantCulture)} Rows in ADO.Net With Data Adapters : {timeMeasure.Elapsed.TotalMilliseconds.ToString("#,##0.00", CultureInfo.InvariantCulture)} ms");
+                    ExecuteCreatedBenchmarkLog objexecuteCreatedBenchmarkLog = new ExecuteCreatedBenchmarkLog();
+                    objexecuteCreatedBenchmarkLog.InsertBenchmark(totalRows.ToString("#,#", CultureInfo.InvariantCulture), "ADO.Net With Data Adapters", timeMeasure.Elapsed.TotalMilliseconds);
+
                 }
                 catch (Exception ex)
                 {
