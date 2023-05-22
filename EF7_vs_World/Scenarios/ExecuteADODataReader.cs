@@ -29,6 +29,7 @@ namespace EF7_vs_World.Scenarios
 
                     using (SqlCommand command = new SqlCommand(query, sqlConnection))
                     {
+                        command.CommandTimeout = 9000;
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
                             List<ModelsEF7.TransactionHistory> transactionHistories = new List<ModelsEF7.TransactionHistory>();
