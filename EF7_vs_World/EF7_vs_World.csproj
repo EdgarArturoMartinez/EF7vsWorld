@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <Folder Include="ModelsEF7\" />
+    <Folder Include="Resources\" />
   </ItemGroup>
 
 </Project>
